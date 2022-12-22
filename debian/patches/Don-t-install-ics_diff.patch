@@ -1,0 +1,23 @@
+From: =?utf-8?q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>
+Date: Fri, 17 Apr 2009 22:46:06 +0200
+Subject: don't install ics_diff
+
+---
+ setup.py | 6 ------
+ 1 file changed, 6 deletions(-)
+
+--- a/setup.py
++++ b/setup.py
+@@ -38,12 +38,6 @@
+       url = "http://eventable.github.io/vobject/",
+       download_url = 'https://github.com/eventable/vobject/tarball/0.9.6.1',
+       bugtrack_url = "https://github.com/eventable/vobject/issues",
+-      entry_points = {
+-            'console_scripts': [
+-                  'ics_diff = vobject.ics_diff:main',
+-                  'change_tz = vobject.change_tz:main'
+-            ]
+-      },
+       include_package_data = True,
+       install_requires = ['python-dateutil >= 2.4.0'],
+       platforms = ["any"],

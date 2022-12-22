@@ -1,0 +1,22 @@
+Source: python-vobject
+Section: python
+Priority: optional
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Guido Günther <agx@sigxcpu.org>, Jelmer Vernooĳ <jelmer@debian.org>
+Build-Depends: debhelper, dh-python,
+ python3,
+ python3-dateutil,
+ python3-setuptools,
+Standards-Version: 4.1.4
+Vcs-Git: https://salsa.debian.org/python-team/packages/vobject.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/vobject
+Homepage: https://eventable.github.io/vobject/
+
+Package: python3-vobject
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}, python3-dateutil
+Recommends: python3-tz
+Description: parse iCalendar and vCards in Python3
+ Parses iCalendar and vCard files into Python3 data structures, decoding the
+ relevant encodings. Also serializes vobject data structures to valid iCalendar
+ or vCard unicode strings.

@@ -1,0 +1,315 @@
+python-vobject (0.9.6.1-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Fix wrong Vcs-*.
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Jelmer Vernooĳ ]
+  * Add debian/upstream/metadata.
+
+  [ Sandro Tosi ]
+  * ack nmu; Closes: #909368
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 11 Jun 2022 21:00:50 -0400
+
+python-vobject (0.9.6.1-0.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Drop python2 support; Closes: #938251
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 12 Dec 2019 22:05:57 -0500
+
+python-vobject (0.9.6.1-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  [ Jelmer Vernooĳ ]
+  * Remove Jonas from uploaders.
+
+  [ Ondřej Nový ]
+  * d/changelog: Remove trailing whitespaces
+
+  [ Jonas Smedegaard ]
+  * New upstream version 0.9.6.1
+    Closes: Bug#907718, #908499.
+    Thanks to Paul Gevers and Adrian Bunk.
+  * Fix drop patch to treat untils as floating:
+    Bogusly double-applied since 0.9.2-1.
+  * Unfuzz patch to not install ics diff.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 22 Sep 2018 17:52:42 +0200
+
+python-vobject (0.9.5-2) unstable; urgency=medium
+
+  * Change maintainer to Debian Python Modules Team. Closes: #899678
+  * Move Vcs-Git to salsa.
+  * Bump standards version to 4.1.4.
+  * Migrate from cdbs to pybuild.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sat, 02 Jun 2018 19:20:50 +0100
+
+python-vobject (0.9.5-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release:
+    + Make ics_diff.py work with Python 3.
+    + Huge changes to text encoding for Python 2/3 compatibility.
+    + Autogenerate DTSTAMP if not provided.
+    + Fix getrruleset() for Python 3 and in the case that addRDate=True.
+    + Update vCard property validation to match specifications.
+    + Handle offset-naive and offset-aware datetimes in recurrence
+      rules.
+    + Improved documentation for multi-value properties.
+    Closes: Bug#866979.
+
+  [ Jonas Smedegaard ]
+  * Unfuzz patches.
+  * Modernize Vcs-Browser field: Use git (not cgit) in path.
+  * Declare compliance with Debian Policy 4.0.0.
+  * Relax to build-depend unversioned on cdbs, and depend unversioned on
+    python-dateutil/python3-dateutil: Needed versions satisfied even in
+    oldstable.
+  * Fix lowercase "v" in "vCards" in short descriptions.
+  * Add myself as uploader.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 03 Jul 2017 22:26:51 +0200
+
+python-vobject (0.9.4.1-2) unstable; urgency=medium
+
+  * Upload to unstable
+  * [fb147c6] autopkgtests: Use python version passed as argument.
+    Thanks to Jeremy Bich (Closes: #861892)
+
+ -- Guido Günther <agx@sigxcpu.org>  Wed, 28 Jun 2017 08:56:28 +0200
+
+python-vobject (0.9.4.1-1) experimental; urgency=medium
+
+  [ Jelmer Vernooĳ ]
+  * New upstream version.
+  * Refresh patch Don-t-install-ics_diff.patch.
+
+  [ Guido Günther ]
+  * [594ce57] Switch to debhelper version 9
+  * [81309e9] Drop unused debian/pycompat
+  * [6969ae9] Drop conflict on calendarserver (<< 2.0)
+    which is no longer in the archive
+  * [d89e91e] autopkgtest: run test against installed package
+
+ -- Guido Günther <agx@sigxcpu.org>  Sat, 08 Apr 2017 14:19:54 +0200
+
+python-vobject (0.9.3-3) unstable; urgency=medium
+
+  * [9712743] Recommend python-tz (Closes: #841249)
+
+ -- Guido Günther <agx@sigxcpu.org>  Fri, 21 Oct 2016 12:58:53 +0200
+
+python-vobject (0.9.3-2) unstable; urgency=medium
+
+  * Merge 0.9.2-{2,3} changes.
+  * Drop patch Fix-ORG-fields-with-multiple-components: applied
+    upstream.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sun, 04 Sep 2016 16:53:01 +0000
+
+python-vobject (0.9.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump standards version to 3.9.8 (no changes).
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sun, 04 Sep 2016 16:45:32 +0000
+
+python-vobject (0.9.2-3) unstable; urgency=medium
+
+  * [a2c7f5c] vcard: Fix ORG fields with multiple components (Closes: #833108)
+  * [846ea0b] Drop patch numbers from patches. The order is already in the
+    series file
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 01 Aug 2016 08:01:12 +0200
+
+python-vobject (0.9.2-2) unstable; urgency=medium
+
+  * [0066201] Python3 support (Closes: #747554)
+  * [fdb34c4] Use https URIs in VCS-* fields
+  * [af34726] Drop superfluous python-dev dependency
+
+ -- Guido Günther <agx@sigxcpu.org>  Sun, 15 May 2016 17:57:44 +0200
+
+python-vobject (0.9.2-1) unstable; urgency=low
+
+  * debian/control: Update upstream homepage.
+  * debian/watch: Update upstream download URL.
+  * Add myself to uploaders.
+  * New upstream release.
+  * Refresh patch 0001-don-t-install-ics_diff.patch.
+  * Drop patch 0002-Deepcopy-params.patch: applied upstream.
+  * Refresh patch 0003-Treat-untils-as-floating.patch.
+  * Drop patch 0004-Normalise-year-info-to-be-within-Python-s-year-
+    bound.patch: alternative fix applied upstream.
+  * Bump standards version to 3.9.7 (no changes).
+  * Convert package to source format 3.0 (quilt).
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sat, 09 Apr 2016 12:28:20 +0000
+
+python-vobject (0.8.1c-4.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Build using dh-python. Closes: #786151.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 22 Aug 2015 08:38:11 +0200
+
+python-vobject (0.8.1c-4) unstable; urgency=low
+
+  * [80b984b] Restore original upstream behaviour on unrecognized parameters
+    (Closes: #569273)
+  * [ae6eba8] Normalise year info to be within Python's year bounds. Thanks
+    to Dave Holland for the patch (Closes: #574133)
+
+ -- Guido Günther <agx@sigxcpu.org>  Wed, 01 Jun 2011 20:05:05 +0200
+
+python-vobject (0.8.1c-3) unstable; urgency=low
+
+  [ Rahul Amaram ]
+  * [57d7cbd] Add patches from Apple Calendarserver 2.3 acked by Jeffrey
+    Harris
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 04 Jan 2010 20:32:01 +0100
+
+python-vobject (0.8.1c-2) unstable; urgency=low
+
+  * Upload to unstable (Closes: #554563)
+  * [0365f3c] Bump standards version
+  * [fda4195] Add README.source
+
+ -- Guido Günther <agx@sigxcpu.org>  Tue, 08 Dec 2009 20:38:38 +0100
+
+python-vobject (0.8.1c-1) experimental; urgency=low
+
+  * [d403e62] Imported Upstream version 0.8.1c
+  * [e66c3d7] rebase ics_diff patch
+  * [20fc2d0] conflict with calendarserver << 2.0 since older version
+              rely on vobject bugs that are now fixed
+              (http://trac.calendarserver.org/ticket/287) (Closes: #491915)
+  * [f03e51c] change maintainer to calendarserver team and bump
+              standards version
+  * [c5d850d] honor nocheck in DEB_BUILD_OPTIONS
+  * [17e1a18] debian/watch: allow letter in the version match
+
+ -- Guido Günther <agx@sigxcpu.org>  Fri, 17 Apr 2009 23:13:41 +0200
+
+python-vobject (0.7.1-1) experimental; urgency=low
+
+  * [43d3667] New Upstream version
+  * [ecc0342] drop support for python 2.4 - the code uses python 2.5
+    constructs
+  * [0b81a6b] update remove_ics.diff patch
+
+ -- Guido Guenther <agx@sigxcpu.org>  Fri, 08 Aug 2008 14:46:19 +0200
+
+python-vobject (0.6.6-1) experimental; urgency=low
+
+  * Upload to experimental since it breaks calendarserver:
+          http://trac.calendarserver.org/ticket/287
+  * [bd308fb] new upstream version 0.6.6
+  * [59a6bae] refresh remove_ics_diff.patch
+  * [2a0a9d9] bump standards version to 3.8.0
+  * [096502c] debian/control: add Homepage:
+
+ -- Guido Guenther <agx@sigxcpu.org>  Fri, 20 Jun 2008 09:37:02 +0200
+
+python-vobject (0.6.0-1) unstable; urgency=low
+
+  * New Upstream Version
+  * fix Python spelling
+  * fix PYTHONPATH for doctests
+  * lower setuptools version number since 0.6c8 isn't in Debian yet and
+    0.6c7 is fine
+
+ -- Guido Guenther <agx@sigxcpu.org>  Fri, 22 Feb 2008 09:43:55 +0100
+
+python-vobject (0.5.0-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Guido Guenther <agx@sigxcpu.org>  Wed, 16 Jan 2008 11:45:55 +0100
+
+python-vobject (0.4.9-1) unstable; urgency=low
+
+  * New Upstream Version (Closes: #458188)
+  * update upstream URL
+  * add watch file
+  * add VCS-* fields
+  * bump standards version
+
+ -- Guido Guenther <agx@sigxcpu.org>  Wed, 02 Jan 2008 10:59:16 +0100
+
+python-vobject (0.4.8-1) unstable; urgency=low
+
+  * New Upstream Version (Closes: #421894)
+  * remove_ics_diff.patch: don't install /usr/bin/ics_diff
+
+ -- Guido Guenther <agx@sigxcpu.org>  Mon, 18 Jun 2007 18:30:30 +0200
+
+python-vobject (0.4.4-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Remove quilt support as there is no patches dir (Closes: #393885).
+
+ -- Luk Claes <luk@debian.org>  Thu, 26 Oct 2006 20:29:44 +0200
+
+python-vobject (0.4.4-1) unstable; urgency=low
+
+  * New Upstream Version
+  * includes all of our patches so we can drop debian/patches/*.patch
+  * good candidate for etch
+
+ -- Guido Guenther <agx@sigxcpu.org>  Wed, 11 Oct 2006 09:05:51 +0200
+
+python-vobject (0.4.3-2) unstable; urgency=low
+
+  * depend on python-setuptools (Closes: #391881).
+
+ -- Guido Guenther <agx@sigxcpu.org>  Mon,  9 Oct 2006 13:26:12 +0200
+
+python-vobject (0.4.3-1) unstable; urgency=low
+
+  * New Upstream (non SVN!) Version
+  * cdbs cleanups
+
+ -- Guido Guenther <agx@sigxcpu.org>  Sat,  7 Oct 2006 00:50:15 +0200
+
+python-vobject (0.0.svn155-2) unstable; urgency=low
+
+  * build depend on python-dateutil so the testuite can run properly.
+    (Closes: #389385)
+
+ -- Guido Guenther <agx@sigxcpu.org>  Mon, 25 Sep 2006 15:49:10 +0200
+
+python-vobject (0.0.svn155-1) unstable; urgency=low
+
+  * new upstream svn version
+  * update icalendar.patch and base.patch from revision 188 of:
+      http://trac.macosforge.org/projects/calendarserver/browser/CalendarServer/trunk/patches/vObject/base.patch
+      http://trac.macosforge.org/projects/calendarserver/browser/CalendarServer/trunk/patches/vObject/icalendar.patch
+  * call test during build
+  * add versione (>= 1.1) dependency for python-dateutil
+
+ -- Guido Guenther <agx@sigxcpu.org>  Sat, 23 Sep 2006 23:57:41 +0200
+
+python-vobject (0.0.svn147-2) unstable; urgency=low
+
+  * set pyversions
+  * rm debian/dirs
+
+ -- Guido Guenther <agx@sigxcpu.org>  Thu,  7 Sep 2006 16:23:55 +0200
+
+python-vobject (0.0.svn147-1) unstable; urgency=low
+
+  * Initial release (Closes: #386254)
+  * import icalendar.patch and base.patch:
+      http://trac.macosforge.org/projects/calendarserver/browser/CalendarServer/trunk/patches/vObject/base.patch
+      http://trac.macosforge.org/projects/calendarserver/browser/CalendarServer/trunk/patches/vObject/icalendar.patch
+
+ -- Guido Guenther <agx@sigxcpu.org>  Wed,  6 Sep 2006 11:04:33 +0200

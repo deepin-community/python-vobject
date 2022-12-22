@@ -1,0 +1,4 @@
+Test-Command: cd debian/tests && ./test.sh 3
+Depends: python3-vobject, python3
+Restrictions: allow-stderr
+
